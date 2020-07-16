@@ -21,17 +21,31 @@ const App: FC = () => {
 
   return (
     <div className="container">
-      <div className="input">
-        <input type="text" onChange={displayHeight} />
-      </div>
-      <div className="input">
-        <input type="text" onChange={displayWeight} />
-      </div>
-      <div className="button">
-        <button type="button" name="calc-bmi" onClick={calcBmi}>
-          計算
-        </button>
-      </div>
+      <h1 className="ui header">BMI計算ツール</h1>
+      <form className="ui form">
+        <div className="input field">
+          <label htmlFor="height">
+            身長
+            <input type="text" id="height" onChange={displayHeight} />
+          </label>
+        </div>
+        <div className="input field">
+          <label htmlFor="weight">
+            体重
+            <input type="text" id="weight" onChange={displayWeight} />
+          </label>
+        </div>
+        <div className="button">
+          <button
+            className="ui button"
+            type="button"
+            name="calc-bmi"
+            onClick={calcBmi}
+          >
+            計算
+          </button>
+        </div>
+      </form>
       <div className="display">BMI:{bmi}</div>
     </div>
   );
